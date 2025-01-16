@@ -27,19 +27,33 @@ Deno.serve(
 );
 
 //pruebas
-function getRestaurants(body: UserLocation) {
-  const locations: RestaurantLocation[] = [];
-  for (let i = -0.01; i <= 0.01; i += 0.005) {
-    for (let j = -0.01; j <= 0.01; j += 0.005) {
-      const restaurant_point: RestaurantLocation = {
-        lat: body.lat + i,
-        lng: body.lng + j,
-        name: `nombre ${
-          (i + 0.01) / 0.005 + (j + 0.01) / 0.005 * 4
-        }`,
-      };
-      locations.push(restaurant_point);
-    }
-  }
+function getRestaurants(_body: UserLocation) {
+  const locations: RestaurantLocation[] = [
+    {
+      "lat": 4.641626791849464,
+      "lng": -74.07512751649837,
+      "name": "La media naranja",
+    },
+    {
+      "lat": 4.630669258358839,
+      "lng": -74.0749593146456,
+      "name": "El zaguan del parkway",
+    },
+    {
+      "lat": 4.63186009635935,
+      "lng": -74.09390848198326,
+      "name": "Una buena receta",
+    },
+    {
+      "lat": 4.624252940357937,
+      "lng": -74.07620385961566,
+      "name": "Bogota food company",
+    },
+    {
+      "lat": 4.63995356434823,
+      "lng": -74.06891515381666,
+      "name": "Nuestra tierra",
+    },
+  ];
   return locations;
 }
